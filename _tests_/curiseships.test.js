@@ -19,4 +19,9 @@ describe('Ship', () => {
         const newShip = new Ship("Dover")
         expect(newShip.startingPort).toBe("Dover");
     });
+    it('can set sail', () => {
+        const newShip = new Ship('Dover');
+        newShip.setSail();
+        expect(newShip.startingPort).toBeFalsy();
+    })
 });

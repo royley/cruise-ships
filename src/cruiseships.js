@@ -12,6 +12,8 @@ Ship.prototype.assignCaptain = function(captainName){
     this.captain = captainName;
 }
 
-
+Ship.prototype.setSail = function(){
+    this.startingPort = false
+}
 
 module.exports = Ship;
