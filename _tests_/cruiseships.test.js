@@ -12,16 +12,16 @@ describe('Ship', () => {
     });
     it('Assigns captain to ship', () => {
         const newShip = new Ship()
-        newShip.assignCaptain("Birdseye")
-        expect(newShip.captain).toBe("Birdseye");
+        newShip.assignCaptain('Birdseye')
+        expect(newShip.captain).toBe('Birdseye');
     });
     it('Set a starting port', () => {
-        const newShip = new Ship("Dover")
-        expect(newShip.startingPort).toBe("Dover");
+        const newShip = new Ship('Dover')
+        expect(newShip.currentPort).toBe('Dover');
     });
     it('can set sail', () => {
         const newShip = new Ship('Dover');
         newShip.setSail();
-        expect(newShip.startingPort).toBeFalsy();
+        expect(newShip.currentPort).toBeFalsy();
     })
 });
