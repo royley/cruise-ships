@@ -1,4 +1,5 @@
 const Ship = require('../src/cruiseships.js');
+const Port = require('../src/port.js')
 
 describe('Ship', () => {
     it('Creates a new instance of ship', () => {
@@ -16,12 +17,21 @@ describe('Ship', () => {
         expect(newShip.captain).toBe('Birdseye');
     });
     it('Set a starting port', () => {
-        const newShip = new Ship('Dover')
-        expect(newShip.currentPort).toBe('Dover');
+        const newPort = new Port('Dover')
+        const newShip = new Ship(newPort)
+        expect(newShip.currentPort).toBe(newPort);
     });
     it('can set sail', () => {
-        const newShip = new Ship('Dover');
+        const newPort = new Port('Dover')
+        const newShip = new Ship(newPort);
         newShip.setSail();
         expect(newShip.currentPort).toBeFalsy();
+    })
+    it('can dock at a new port', () => {
+        const dover = new Port('Dover')
+        const ship = new Ship(dover)
+        const calais = new Port('Calais')
+        ship.dock(calais)
+        expect(ship.currentPort).toBe(calais)
     })
 });

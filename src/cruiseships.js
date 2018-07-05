@@ -1,7 +1,7 @@
-function Ship(startingPort){
+function Ship(currentPort){
     this.captain = "",
     this.noOfPassengersAboard = 0,
-    this.startingPort = startingPort
+    this.currentPort = currentPort
 }
 
 Ship.prototype.boarding = function(passengersWaiting){
@@ -13,7 +13,11 @@ Ship.prototype.assignCaptain = function(captainName){
 }
 
 Ship.prototype.setSail = function(){
-    this.startingPort = false
+    this.currentPort = false
+}
+
+Ship.prototype.dock = function(port){
+    this.currentPort = port
 }
 
 module.exports = Ship;
